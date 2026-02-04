@@ -87,14 +87,14 @@
     }
 
     #yesBtn {
-      left: 18%;
+      left: 20%;
       background: var(--yes);
       color: #fff;
     }
     #yesBtn:hover { background: var(--yesHover); }
 
     #noBtn {
-      left: 62%;
+      left: 80%;
       background: #e5e7eb;
       color: #111827;
     }
@@ -108,11 +108,12 @@
     .result {
       display: none;
       margin-top: 18px;
+      border: solid black;
       animation: pop .35s ease;
     }
 
     .result h3 {
-      font-size: clamp(30px, 4.5vw, 46px);
+      font-size: max(30px, 2.5vw);
       margin: 10px 0;
     }
 
@@ -142,7 +143,6 @@
       <button id="noBtn">No</button>
     </section>
 
-    <!-- HINT -->
     <div class="hint" id="hint">Please don't say “No”</div>
 
     <section class="result" id="result">
