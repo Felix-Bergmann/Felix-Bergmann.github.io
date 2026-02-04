@@ -264,7 +264,9 @@
 
       newLeft =  getRandomInt(z.width - b.width);
       newTop  =  getRandomInt(z.height - b.height);
-      moveNo(newLeft, newTop);
+      noBtn.style.left = newLeft + "px";
+      noBtn.style.top = newTop + "px";
+      noBtn.style.transform = "none";
     });
 
     /* ---------- YES CLICK ---------- */
