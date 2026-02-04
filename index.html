@@ -151,6 +151,7 @@
         src="https://cdn.sanity.io/images/50jw3dkk/production/26d0817cae1d7dbc62f88e1c9ab59c1264e565af-2600x1735.jpg"
         alt="Giorgia"
       />
+      <h5>Reservierung Giorgia Trattoria</h3>
       <h5>🗓 Samstag 14. Februar 2026</h3>
       <h5>⏰ 14:00 - 15:30</h3>
     </section>
@@ -243,6 +244,10 @@
       growYes();
     }
 
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * max);
+    }
+
     zone.addEventListener("pointermove", e => {
       const b = noBtn.getBoundingClientRect();
       const d = Math.hypot(
@@ -252,7 +257,15 @@
       if (d < 140) moveNo(e.clientX, e.clientY);
     });
 
-    noBtn.addEventListener("click", e => e.preventDefault());
+    /* ---------- NO CLICK ---------- */
+    noBtn.addEventListener("click", () => {
+      const b = noBtn.getBoundingClientRect();
+      const z = zone.getBoundingClientRect();
+
+      newLeft =  getRandomInt(z.width - b.width);
+      newTop  =  getRandomInt(z.height - b.height);
+      moveNo(newLeft, newTop);
+    });
 
     /* ---------- YES CLICK ---------- */
     yesBtn.addEventListener("click", () => {
